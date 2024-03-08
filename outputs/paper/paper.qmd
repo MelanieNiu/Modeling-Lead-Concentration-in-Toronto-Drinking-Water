@@ -17,7 +17,7 @@ bibliography: references.bib
 #| message: false
 
 library(tidyverse)
-library(palmerpenguins)
+
 ```
 
 
@@ -79,8 +79,8 @@ The data were cleaned, analyzed, and visualized using the open-source statistica
 
 library(rstanarm)
 
-first_model <-
-  readRDS(file = here::here("outputs/models/first_model.rds"))
+# first_model <-
+#   readRDS(file = here::here("outputs/models/first_model.rds"))
 ```
 
 ```{r}

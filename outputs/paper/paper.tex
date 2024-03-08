@@ -1,0 +1,316 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Investigating the lead concentration in Toronto water pipe},
+  pdfauthor={Yuchao Niu},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Investigating the lead concentration in Toronto water
+pipe\thanks{Code and data are available
+at:https://github.com/MelanieNiu/Investigating-the-risk-of-lead-exposure-through-tap-drinking-water-in-Toronto-}}
+\author{Yuchao Niu}
+\date{March 8, 2024}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Lead exposure can have severe health implications especially for the
+vulnerable groups of children and pregnant and breastfeeding women. This
+report investigates the risk of lead exposure through tap drinking water
+in the city of Toronto by analyzing an open dataset and found the risk
+level to be negligible. The report also found winter months to correlate
+with lower likelihood of lead exposure through tap drinking water. The
+report supported that the corrosion control plan implemented by the city
+is effective.
+\end{abstract}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, borderline west={3pt}{0pt}{shadecolor}, frame hidden, boxrule=0pt, breakable, sharp corners, enhanced]}{\end{tcolorbox}}\fi
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Lead is a naturally occurring element present in the earth's crust. Lead
+compounds have been widely used in our society including in paint,
+pipes, gasoline, batteries, and cosmetics. Lead can also be introduced
+into the environment through industrial activities such as through
+mining and spark-ignition engine aircraft. Despite some of their
+beneficial uses, lead can be potentially toxic to humans and animals at
+elevated levels affecting nearly every organ in the body with the
+greatest risk to the nervous system. Children are most susceptible to
+the effects of lead, where even low levels of lead in the blood can lead
+to behavior and learning problems, slowed growth, lower IQ and anemia
+(Reference). Lead can also accumulate in our bodies. Pregnant and
+breastfeeding women previously exposed to lead may have it accumulated
+in their bodies and released into the bloodstream causing harms to their
+fetus or infants.
+
+Exposure to lead through tap drinking water is one major cause of lead
+poisoning and has led to past public health crisis {[}flinch
+citation{]}. Lead was commonly used in plumbing materials such as water
+pipes and solder and can leach into the water supply. New regulations
+after 1990s have restricted the use of lead in plumbing, however older
+buildings still face the risk of lead leaching. The Canadian Drinking
+Water Quality Guidelines establish a maximum allowable concentration of
+0.005 ppb for total lead in drinking water, measured directly at the
+tap.
+
+Toronto Residential Lead Testing Program supported by the city of
+Toronto to test lead concentration in tap drinking water provides data
+in this aspect. Utilizing this dataset, my report conducted statistical
+analysis to gain insight of the risk of lead exposure through Toronto
+tap drinking water from 2014 to the present and provide support that the
+corrosion control plan initiated by the city since 2014 has effectively
+reduced the risk of lead exposure through tap drinking water. Section
+2.1 the Toronto Residential Lead Testing Program dataset ``Non Regulated
+Lead Sample'' and its measurement is introduced. In Section 2.2 each
+variable of the dataset is explained and visualized. In section 3,
+seasonal and regional factors to potential impact lead concentration in
+tap drinking water are explored. While regional factors show no clear
+relationship with lead concentration in tap drinking water in Toronto,
+winter months show the lowest number of drinking water samples with lead
+concentration exceeding the allowed concentration set out by public
+health guidelines.
+
+\hypertarget{sec-data}{%
+\section{Data}\label{sec-data}}
+
+\hypertarget{sec-datasource}{%
+\subsection{Data Source and Measurement}\label{sec-datasource}}
+
+The data utilized in this report are retrieved from Open Data Toronto
+Portal. The dataset is titled ``Non Regulated Lead Sample''. The data
+are being collected by the City's Residential Lead Testing Program which
+provides free testing to Toronto residents who have concerns about
+potential lead contamination in their drinking water. Residents have the
+option to collect and return a water sample kit at any of the six
+Toronto Public Health facilities. Detailed instructions are provided on
+how to procure an accurate water sample. The lead test results are
+shared with the requesting residents when available.
+
+One inherent limitation of this dataset is that sampling is conducted
+based on requests of residents other than a systematic collection
+method. Therefore not all water pipes of the city are sampled
+consistently. Since residents who are more concerned about lead toxicity
+or residents who live in households installed with older lead water
+pipes are more likely to request sampling, a self-selection bias may be
+present and hence limit the usefulness of this dataset. In addition, the
+water samples are collected by individual. requesting resident. Even
+though with detailed instructions are provided, the City's Residential
+Lead Testing Program has no complete control over the exact sample
+collection method and location. Privacy of the requesting residents is
+preserved; no personal identifier or exact location of sampling is
+included in the dataset for privacy reasons.
+
+This dataset contains 13000 observations and 5 columns containing
+variables of ID, Sample Number, Sample Date, Partial Postal Code of the
+sampling location and Lead Amount detected in the drinking water sample
+in ppm. The dataset was last updated on January 24, 2024 and has
+captured data from 2014 till present.
+
+The data were cleaned, analyzed, and visualized using the open-source
+statistical programming language R (R Core Team 2022) Functionalities
+from additional packages tidyverse (Wickham et al. 2019), lubridate
+(Grolemund and Wickham 2011) and ggplot (\textbf{ggplot?}) were also
+utilized.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+\begin{table}
+
+\end{table}
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-citelubridate}{}}%
+Grolemund, Garrett, and Hadley Wickham. 2011. {``Dates and Times Made
+Easy with {lubridate}.''} \emph{Journal of Statistical Software} 40 (3):
+1--25. \url{https://www.jstatsoft.org/v40/i03/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-citeR}{}}%
+R Core Team. 2022. \emph{R: A Language and Environment for Statistical
+Computing}. Vienna, Austria: R Foundation for Statistical Computing.
+\url{https://www.R-project.org/}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-tidyverse}{}}%
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
+D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
+{``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software}
+4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+
+\end{CSLReferences}
+
+
+
+\end{document}
